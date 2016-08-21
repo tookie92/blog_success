@@ -25,6 +25,9 @@
       <ul id="nav-mobile" class="side-nav">
         <% if user_signed_in? %>
         <li><div class="userView">
+          <% if current_user.cover.thumb('300x300#').url? %>
+            no pic
+          <% end %>
           <%= image_tag current_user.cover.thumb('300x300#').url, class: 'background'%>
           <%= image_tag current_user.profil.thumb('80x80#').url, class: 'circle' %>
           <a href="<%= edit_user_registration_path %>"> <span class="white-text name">

@@ -6,7 +6,4 @@ class User < ActiveRecord::Base
 
          dragonfly_accessor :profil
          dragonfly_accessor :cover
-
-         validates_presence_of :profil
-
 end

@@ -6,7 +6,12 @@
   <div class="form-inputs">
     <div>
       <label for="profil">Profil</label></br>
-      <%= f.file_field :profil %>
+      <%= f.file_field :profil, required: true, autofocus: true%>
+    </div>
+
+    <div>
+      <label for="cover">Profil</label></br>
+      <%= f.file_field :cover, required: true, autofocus: true%>
     </div>
     <%= f.input :prenom  %>
     <%= f.input :nom %>
