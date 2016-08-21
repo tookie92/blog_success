@@ -10,8 +10,22 @@
   max-height:864px;
   position:relative;
 }
+
 #index-banner hr{
   margin: auto;
+}
+
+#index-banner h1{
+  margin: -7.9rem 0 1.68rem 0;
+  padding: 10px 0 88px 0;
+}
+
+#index-banner a{
+  margin: -20px;
+}
+
+#index-banner .circle{
+  margin: 89px;
 }
 .text_h{
   padding:15% 0;
@@ -22,6 +36,10 @@
 nav ul a,
 nav .brand-logo {
   color: #444;
+}
+
+nav ul img {
+  margin-top: 16px;
 }
 
 p {
