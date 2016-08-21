@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Texte:</strong>
+  <%= @custom.texte %>
+</p>
+
+<p>
+  <strong>Couleur:</strong>
+  <%= @custom.couleur %>
+</p>
+
+<%= link_to 'Edit', edit_custom_path(@custom) %> |
+<%= link_to 'Back', customs_path %>

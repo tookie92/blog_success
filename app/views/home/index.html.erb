@@ -74,7 +74,7 @@ nav {background-color: white !important}
         <%= image_tag current_user.profil.thumb('150x150#').url, class: 'circle' %>
       </div>
       <br>
-      <h1 class="text_h center header cd-headline letters type"><%= current_user.prenom+" "+current_user.nom %>
+      <h1 class="text_h center header cd-headline letters type"><%= current_user.nom+" "+current_user.prenom %>
         <hr>
       <% else %>
       <div class="row center">
@@ -85,7 +85,11 @@ nav {background-color: white !important}
         <hr>
         <% end %>
       <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        <% if current_user.citation.empty? %>
+          <h5 class="header col s12 light">  veuillez inserer votre citation </h5>
+          <% else %>
+          <h5 class="header col s12 light"> <%= current_user.citation %> </h5>  
+         <% end %>
       </div>
       </h1>
       <div class="row center">
