@@ -6,15 +6,21 @@
     <ul class="right hide-on-med-and-down">
       <li><a href="#presentation">Presentation</a></li>
       <li><a href="#pdj">Pens&eacute;e</a></li>
-      <li><a href="#">Navbar Link</a></li>
-      <li><a href="#">Navbar Link</a></li>
-      <li><a href="#">Navbar Link</a></li>
-      <li><a href="#">Navbar Link</a></li>
-      <li><a href="#">Navbar Link</a></li>
+      <li><a href="#present">Presentation</a></li>
+      <li><a href="#pdj">Pens&eacute;</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#event">Events</a></li>
+      <li><a href="contact">Contact</a></li>
     </ul>
 
     <ul id="nav-mobile" class="side-nav">
       <li><a href="#presentation">Presentation</a></li>
+      <li><a href="#pdj">Pens&eacute;e</a></li>
+      <li><a href="#present">Presentation</a></li>
+      <li><a href="#pdj">Pens&eacute;</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#event">Events</a></li>
+      <li><a href="contact">Contact</a></li>
     </ul>
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
   </div>
@@ -95,8 +101,8 @@
 <div class="section scrollspy" id="work">
     <div class="container">
         <h2 class="header text_b">Work </h2>
-      <% @works.each do |w| %>
         <div class="row">
+          <% @works.each do |w| %>
             <div class="col s12 m4 l4">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
@@ -112,8 +118,8 @@
                     </div>
                 </div>
             </div>
+            <% end %>
         </div>
-      <% end %>
     </div>
 </div>
 
