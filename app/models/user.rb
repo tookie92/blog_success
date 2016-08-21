@@ -6,5 +6,4 @@ class User < ActiveRecord::Base
 
          dragonfly_accessor :profil
          dragonfly_accessor :cover
-
 end

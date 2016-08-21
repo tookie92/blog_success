@@ -10,12 +10,12 @@
 
     <div>
       <label for="profil">Profil</label></br>
-      <%= f.file_field :profil %>
+      <%= f.file_field :profil, required: true, autofocus: true %>
     </div>
 
     <div>
       <label for="profil">Couverture</label></br>
-      <%= f.file_field :cover %>
+      <%= f.file_field :cover, required: true, autofocus: true %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

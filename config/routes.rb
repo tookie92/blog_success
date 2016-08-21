@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+<<<<<<< HEAD
+=======
+  get 'contours/index'
+
+  resources :customs
+>>>>>>> customize
   resources :works
   devise_for :users
   root 'home#index'
