@@ -4,23 +4,47 @@
   <div class="nav-wrapper container">
     <a id="logo-container" href="#" class="brand-logo">Yahoo</a>
     <ul class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+      <li><%= link_to current_user.nom+" "+current_user.prenom, edit_user_registration_path %></li>
       <li><a href="#presentation">Presentation</a></li>
       <li><a href="#pdj">Pens&eacute;e</a></li>
-      <li><a href="#present">Presentation</a></li>
-      <li><a href="#pdj">Pens&eacute;</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#event">Events</a></li>
-      <li><a href="contact">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
+            <li><%= link_to "Deconnexion", destroy_user_session_path, method: :delete  %></li>
+            <% else  %>
+            <li><a href="#presentation">Presentation</a></li>
+            <li><a href="#pdj">Pens&eacute;e</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#event">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><%= link_to "Inscription", new_user_session_path  %></li>
+            <% end %>
     </ul>
 
     <ul id="nav-mobile" class="side-nav">
+      <% if user_signed_in? %>
+      <li><div class="userView">
+        <img class="background" src="../background2.jpg">
+        <a href="<%= edit_user_registration_path %>"> <span class="white-text name">
+        <%= current_user.nom+" "+current_user.prenom %></span></a>
+        <a href="<%= edit_user_registration_path %>"> <span class="white-text email">
+        <%= current_user.email %></span></a>
+      </div></li>
       <li><a href="#presentation">Presentation</a></li>
       <li><a href="#pdj">Pens&eacute;e</a></li>
-      <li><a href="#present">Presentation</a></li>
-      <li><a href="#pdj">Pens&eacute;</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#event">Events</a></li>
-      <li><a href="contact">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
+            <li><%= link_to "Deconnexion", destroy_user_session_path, method: :delete  %></li>
+            <% else  %>
+            <li><a href="#presentation">Presentation</a></li>
+            <li><a href="#pdj">Pens&eacute;e</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#event">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><%= link_to "Inscription", new_user_session_path  %></li>
+            <% end %>
     </ul>
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
   </div>
