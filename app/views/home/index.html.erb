@@ -25,7 +25,7 @@
     <ul id="nav-mobile" class="side-nav">
       <% if user_signed_in? %>
       <li><div class="userView">
-        <img class="background" src="../background2.jpg">
+        <%= image_tag current_user.cover.thumb('300x300#').url, class: 'background'%>
         <%= image_tag current_user.profil.thumb('80x80#').url, class: 'circle' %>
         <a href="<%= edit_user_registration_path %>"> <span class="white-text name">
         <%= current_user.nom+" "+current_user.prenom %></span></a>
@@ -73,7 +73,7 @@
 
     </div>
   </div>
-  <div class="parallax"><img src="../background1.jpg" alt="Unsplashed background img 1"></div>
+  <div class="parallax"><%= image_tag current_user.cover.thumb('1440x835#').url%></div>
 </div>
 
 
@@ -122,7 +122,7 @@
       </div>
     </div>
   </div>
-  <div class="parallax"><img src="../background2.jpg" alt="Unsplashed background img 2"></div>
+  <div class="parallax"><%= image_tag current_user.cover.thumb('1440x835#').url%></div>
 </div>
 
 <!--Work-->
@@ -159,7 +159,7 @@
       </div>
     </div>
   </div>
-  <div class="parallax"><img src="../background3.jpg" alt="Unsplashed background img 3"></div>
+  <div class="parallax"><%= image_tag current_user.cover.thumb('1440x835#').url%></div>
 </div>
 
 <footer class="page-footer teal">

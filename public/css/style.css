@@ -10,6 +10,9 @@
   max-height:864px;
   position:relative;
 }
+.userView .background{
+  margin-top: 0px;
+}
 
 #index-banner hr{
   margin: auto;
