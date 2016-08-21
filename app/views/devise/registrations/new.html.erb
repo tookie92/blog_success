@@ -4,6 +4,12 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <div>
+      <label for="profil">Profil</label></br>
+      <%= f.file_field :profil %>
+    </div>
+    <%= f.input :prenom  %>
+    <%= f.input :nom %>
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>

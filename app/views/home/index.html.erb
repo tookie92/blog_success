@@ -26,6 +26,7 @@
       <% if user_signed_in? %>
       <li><div class="userView">
         <img class="background" src="../background2.jpg">
+        <%= image_tag current_user.profil.thumb('80x80#').url, class: 'circle' %>
         <a href="<%= edit_user_registration_path %>"> <span class="white-text name">
         <%= current_user.nom+" "+current_user.prenom %></span></a>
         <a href="<%= edit_user_registration_path %>"> <span class="white-text email">
@@ -54,7 +55,10 @@
 <div id="index-banner" class="parallax-container">
   <div class="section no-pad-bot">
     <div class="container">
-      <br><br>
+      <div class="row center">
+        <%= image_tag current_user.profil.thumb('150x150#').url, class: 'circle' %>
+      </div>
+      <br>
       <h1 class="text_h center header cd-headline letters type"><%= current_user.prenom+" "+current_user.nom %>
         <hr>
       <div class="row center">
