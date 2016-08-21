@@ -25,9 +25,6 @@
       <ul id="nav-mobile" class="side-nav">
         <% if user_signed_in? %>
         <li><div class="userView">
-          <% if current_user.cover.thumb('300x300#').url? %>
-            no pic
-          <% end %>
           <%= image_tag current_user.cover.thumb('300x300#').url, class: 'background'%>
           <%= image_tag current_user.profil.thumb('80x80#').url, class: 'circle' %>
           <a href="<%= edit_user_registration_path %>"> <span class="white-text name">
@@ -79,13 +76,14 @@ nav {background-color: white !important}
       <br>
       <h1 class="text_h center header cd-headline letters type"><%= current_user.prenom+" "+current_user.nom %>
         <hr>
-      <% end %>
+      <% else %>
       <div class="row center">
         <img src="/adji.jpg" class="circle" />
       </div>
       <br>
       <h1 class="text_h center header cd-headline letters type">welcome
         <hr>
+        <% end %>
       <div class="row center">
         <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
       </div>

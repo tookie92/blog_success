@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'devise_roles'
 gem 'dragonfly'
+gem 'rails_admin'
 
 
 group :development, :test do
