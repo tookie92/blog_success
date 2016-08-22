@@ -3,10 +3,10 @@
 
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
-    $('#tohash').on('click', function(){
-  		$('html, body').animate({scrollTop: $(this.hash).offset().top - 5}, 1000);
-  		return false;
-  	});
+     $('.scrollspy').scrollSpy({
+       scrollOffset :50
+
+     });// end of scrollspy
   }); // end of document ready
 
 })(jQuery); // end of jQuery name space
