@@ -1,40 +1,68 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :prenom  %>
-    <%= f.input :nom %>
-    <%= f.input :citation %>
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <div>
-      <label for="profil">Profil</label></br>
-      <%= f.file_field :profil, required: true, autofocus: true %>
-    </div>
-
-    <div>
-      <label for="profil">Couverture</label></br>
-      <%= f.file_field :cover, required: true, autofocus: true %>
-    </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+<%= render 'layouts/params' %>
+<header>
+  <% content_for :nav do %>
+  <nav class="top-nav">
+      <div class="container">
+        <div class="nav-wrapper"><a class="page-title">Transitions</a></div>
+      </div>
+    </nav>
+  <% end %>
+  <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
+      <ul id="nav-mobile" class="side-nav fixed">
+          <li><%= link_to "Back", :back %></li>
+      </ul>
   </div>
+</header>
+<main>
+<div class="container">
+  <div class="row">
+    <div class="col s12 m9 l10">
+      <div class="card blue lighten-5 z-depth-3">
+        <div class="card-content black-text">
+          <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.input :prenom %>
+              <%= f.input :nom %>
+              <%= f.input :citation, class: "validate" %>
+              <%= f.input :email, required: true, autofocus: true %>
+
+              <div>
+                <label for="profil">Profil</label></br>
+                <%= f.file_field :profil, required: true, autofocus: true %>
+              </div>
+
+              <div>
+                <label for="profil">Couverture</label></br>
+                <%= f.file_field :cover, required: true, autofocus: true %>
+              </div>
+
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+              <% end %>
+
+              <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+              <%= f.input :password_confirmation, required: false %>
+              <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+            </div>
+            <div class="card-action">
+              <div class="form-actions">
+                <%= f.button :submit, "Update" %>
+              </div>
+            <% end %>
+
+            <h3>Cancel my account</h3>
+
+              <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+            </div>
+
+            <%= link_to "Back", :back %>
+        </div>
+      </div>
+    </div>
+    </div>
   </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</main>
