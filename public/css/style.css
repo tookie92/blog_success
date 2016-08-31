@@ -92,3 +92,11 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+@media only projection and (max-width : 1879px) {
+  #index-banner{
+    min-height: 825px;
+    max-height: 864px;
+    position: relative;
+  }
+}

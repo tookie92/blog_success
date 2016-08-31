@@ -79,6 +79,9 @@ nav a {
  #dropdown1 a {
   color: #003366 !important;
 }
+.side-nav a{
+  color: #003366 !important;
+}
 </style>
 <% end %>
 <div id="index-banner" class="parallax-container">
@@ -171,7 +174,7 @@ nav a {
         <h2 class="header text_b">Work </h2>
         <div class="row">
           <% @works.each do |w| %>
-            <div class="col s12 m4 l4">
+            <div class="col s12 m4 l4" id="staggered-test">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <%= image_tag w.image.thumb('500x500#').url %>
