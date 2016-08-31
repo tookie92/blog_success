@@ -17,7 +17,7 @@
               </ul>
           <!-- / Dropdown Structure -->
                     <li><%= image_tag current_user.profil.thumb('30x30#').url, class: 'circle' %> </li>
-                    <li><%= link_to current_user.nom+" "+current_user.prenom, edit_user_registration_path %></li>
+                    <li><%= link_to current_user.prenom+" "+current_user.nom, edit_user_registration_path %></li>
                     <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
 
               <% else  %>
@@ -36,7 +36,7 @@
           <%= image_tag current_user.cover.thumb('300x300#').url, class: 'background'%>
           <%= image_tag current_user.profil.thumb('80x80#').url, class: 'circle' %>
           <a href="<%= edit_user_registration_path %>"> <span class="white-text name">
-          <%= current_user.nom+" "+current_user.prenom %></span></a>
+          <%= current_user.prenom+" "+current_user.nom %></span></a>
           <a href="<%= edit_user_registration_path %>"> <span class="white-text email">
           <%= current_user.email %></span></a>
         </div></li>
@@ -92,7 +92,7 @@ nav a {
         <%= image_tag current_user.profil.thumb('150x150#').url, class: 'circle' %>
       </div>
       <br>
-      <h1 class="text_h center header cd-headline letters type"><%= current_user.nom+" "+current_user.prenom %>
+      <h1 class="text_h center header cd-headline letters type"><%= current_user.prenom+" "+current_user.nom %>
         <hr>
       <% else %>
       <div class="row center">

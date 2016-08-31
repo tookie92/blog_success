@@ -24,14 +24,21 @@
 #index-banner h1{
   margin: -7.9rem 0 1.68rem 0;
   padding: 10px 0 88px 0;
+  font-family: 'Titan One', cursive;
 }
-
+#index-banner h1 h5{
+  font-family: 'Merienda', cursive;
+  color: #003366;
+}
 #index-banner a{
   margin: -20px;
+  border-radius: 12px;
 }
 
 #index-banner .circle{
   margin: 89px;
+  margin-right: 136px;
+  margin-bottom: 89px;
 }
 .text_h{
   padding:15% 0;
@@ -93,7 +100,7 @@ footer.page-footer {
   margin: 0;
 }
 
-@media only projection and (max-width : 1879px) {
+@media only screen and projection  {
   #index-banner{
     min-height: 825px;
     max-height: 864px;
