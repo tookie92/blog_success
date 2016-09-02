@@ -16,12 +16,10 @@
       belowOrigin: false, // Displays dropdown below the button
       alignment: 'left' // Displays dropdown with edge aligned to the left of button
     });// end of dropdown
+  $('.carousel.carousel-slider').carousel({
+    full_width: true,
+    autoplay: true,
+  }); // end of carousel-slider
 
-                          var options = [
-                      {selector: '#staggered-test', offset: 300, callback: function(el) {
-                        Materialize.fadeInCard($(el));
-                      } },
-                      ];
-                      Materialize.scrollFire(options);
   }); // end of document ready
 })(jQuery); // end of jQuery name space

@@ -111,7 +111,9 @@ nav a {
       </div>
       </h1>
       <div class="row center">
-        <a href="#presentation" id="tohash" class="btn-large waves-effect waves-light teal lighten-1 animated flip">Get Started</a>
+        <a href="#presentation" id="tohash" class="waves-effect  wow bounce" data-wow-iteration="infinite" data-wow-duration="2s">
+          <i class="material-icons"><h2>keyboard_arrow_down</h2></i>
+        </a>
       </div>
 
 
@@ -119,7 +121,9 @@ nav a {
     </div>
   </div>
   <% if user_signed_in? %>
-    <div class="parallax"><%= image_tag current_user.cover.thumb('1440x835#').url%></div>
+  <div class="parallax">
+    <%= image_tag current_user.cover.thumb('1440x835#').url%>
+  </div>
     <% else %>
       <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 2"></div>
   <% end %>
@@ -132,15 +136,15 @@ nav a {
     <!--   Icon Section   -->
     <div class="row colonne">
       <div class="col s12 m6 l6">
-        <div  class="icon-block wow slideInLeft">
-          <p class="light wow bounce">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+        <div  class="icon-block wow slideInLeft" data-wow-delay="200ms">
+          <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
         </div>
       </div>
 
 
 
       <div class="col s12 m6 l6  z-depth-2">
-        <div class="icon-block">
+        <div class="icon-block wow slideInRight" data-wow-delay="205ms">
           <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
           <h5 class="center">Easy to work with</h5>
 
@@ -174,7 +178,7 @@ nav a {
         <h2 class="header text_b">Work </h2>
         <div class="row">
           <% @works.each do |w| %>
-            <div class="col s12 m4 l4" id="staggered-test">
+            <div class="col s12 m4 l4 wow flipInX" >
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <%= image_tag w.image.thumb('500x500#').url %>
