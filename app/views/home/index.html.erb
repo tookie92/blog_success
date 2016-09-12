@@ -18,7 +18,7 @@
           <!-- / Dropdown Structure -->
                     <li><%= image_tag current_user.profil.thumb('30x30#').url, class: 'circle' %> </li>
                     <li><%= link_to current_user.prenom+" "+current_user.nom, edit_user_registration_path %></li>
-                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<i class="ti-arrow-down right"></i></a></li>
 
               <% else  %>
               <li><a href="#presentation">Presentation</a></li>
@@ -55,7 +55,7 @@
               <li><%= link_to "Inscription", new_user_session_path  %></li>
               <% end %>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="ti-menu"></i></a>
     </div>
     </div>
   </nav>
@@ -112,7 +112,7 @@ nav a {
       </h1>
       <div class="row center">
         <a href="#presentation" id="tohash" class="waves-effect  wow bounce" data-wow-iteration="infinite" data-wow-duration="2s">
-          <i class="material-icons"><h2>keyboard_arrow_down</h2></i>
+          <h2><i class="ti-arrow-circle-down"></i></h2>
         </a>
       </div>
 
@@ -188,7 +188,7 @@ nav a {
                         <p><%= link_to 'Project Link', w %></p>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4"><%= w.title %><i class="mdi-navigation-close right"></i></span>
+                        <span class="card-title grey-text text-darken-4"><%= w.title %><i class="ti-close right"></i></span>
                         <p><%= w.description %></p>
                     </div>
                 </div>

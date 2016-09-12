@@ -18,7 +18,7 @@ gem 'devise'
 gem 'devise_roles'
 gem 'dragonfly'
 gem 'rails_admin'
-
+gem 'themify-icons-rails'
 
 
 group :development, :test do

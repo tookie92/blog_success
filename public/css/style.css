@@ -40,11 +40,10 @@
   margin-right: 136px;
   margin-bottom: 89px;
 }
-#index-banner .material-icons{
+#index-banner .ti-arrow-circle-down{
 margin-top: 21px;
 color: white;
 background-color: transparent;
-border-radius: 20px;
 }
 .text_h{
   padding:15% 0;
