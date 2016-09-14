@@ -21,5 +21,11 @@
     autoplay: true,
   }); // end of carousel-slider
 
+
+
+    $('.tooltipped').tooltip({
+      delay: 50
+    }); // end of tooltiped
+
   }); // end of document ready
 })(jQuery); // end of jQuery name space
