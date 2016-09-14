@@ -89,7 +89,7 @@ nav a {
     <div class="container">
       <% if user_signed_in? %>
       <div class="row center">
-        <%= image_tag current_user.profil.thumb('150x150#').url, class: 'circle' %>
+        <%= image_tag current_user.profil.thumb('150x150#').url, class: 'circle hoverable' %>
       </div>
       <br>
       <h1 class="text_h center header cd-headline letters type"><%= current_user.prenom+" "+current_user.nom %>
@@ -110,7 +110,7 @@ nav a {
          <% end %>
       </div>
       </h1>
-      <div class="row center">
+      <div class="row center hide-on-small-only ">
         <a href="#presentation" id="tohash" class="waves-effect  wow bounce" data-wow-iteration="infinite" data-wow-duration="2s">
           <h2><i class="ti-arrow-circle-down"></i></h2>
         </a>

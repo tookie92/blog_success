@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :items do
+    member do
+      patch :complete
+    end
+  end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'contours/index'
 
