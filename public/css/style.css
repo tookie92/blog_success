@@ -7,7 +7,9 @@
  */
  ul .dropdown-content{
    margin-top:44px;
+   width: 136px !important;
  }
+ 
 #index-banner{
   min-height:632px;
   max-height:864px;
