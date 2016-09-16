@@ -6,6 +6,9 @@ before_action :authenticate_user!
   # pour ajouter un champ dans le formulaire user
    before_action :configure_permitted_parameters, if: :devise_controller?
 
+   
+
+
 	protected
 		def configure_permitted_parameters
 		  devise_parameter_sanitizer.permit(:sign_up, keys: [:nom, :prenom, :email, :password, :profil,

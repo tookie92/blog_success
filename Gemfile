@@ -19,7 +19,7 @@ gem 'devise_roles'
 gem 'dragonfly'
 gem 'rails_admin'
 gem 'themify-icons-rails'
-
+gem 'mailboxer'
 
 group :development, :test do
   gem 'byebug'
