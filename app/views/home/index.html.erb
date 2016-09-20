@@ -16,7 +16,7 @@
                       <li><%= link_to "Deconnexion", destroy_user_session_path, method: :delete  %></li>
               </ul>
           <!-- / Dropdown Structure -->
-                    <li><%= image_tag current_user.profil.thumb('30x30#').url, class: 'circle' %> </li>
+                    <li><%= image_tag current_user.profil.thumb('30x30#').url, class: 'circle responsive-img' %> </li>
                     <li><%= link_to current_user.prenom+" "+current_user.nom, edit_user_registration_path %></li>
                     <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<small><i class="ti-widget-alt right" style="font-size : small; margin: 2px">
                     </i></small></a></li>
@@ -34,7 +34,7 @@
       <ul id="nav-mobile" class="side-nav">
         <% if user_signed_in? %>
         <li><div class="userView">
-          <%= image_tag current_user.cover.thumb('300x300#').url, class: 'background'%>
+          <%= image_tag current_user.cover.thumb('300x300#').url, class: 'background responsive-img'%>
           <%= image_tag current_user.profil.thumb('80x80#').url, class: 'circle' %>
           <a href="<%= edit_user_registration_path %>"> <span class="white-text name">
           <%= current_user.prenom+" "+current_user.nom %></span></a>
@@ -90,7 +90,7 @@ nav a {
     <div class="container">
       <% if user_signed_in? %>
       <div class="row center">
-        <%= image_tag current_user.profil.thumb('150x150#').url, class: 'circle hoverable' %>
+        <%= image_tag current_user.profil.thumb('150x150#').url, class: 'circle hoverable responsive-img' %>
       </div>
       <br>
       <h1 class="text_h center header cd-headline letters type"><%= current_user.prenom+" "+current_user.nom %>
@@ -112,7 +112,7 @@ nav a {
       </div>
       </h1>
       <div class="row center hide-on-small-only ">
-        <a href="#presentation" id="tohash" class="waves-effect  wow bounce" data-wow-iteration="infinite" data-wow-duration="2s">
+        <a href="#presentation" id="tohash" class="waves-effect hide-on-med-and-down  wow bounce" data-wow-iteration="infinite" data-wow-duration="2s">
           <h2><i class="ti-arrow-circle-down"></i></h2>
         </a>
       </div>
@@ -123,7 +123,7 @@ nav a {
   </div>
   <% if user_signed_in? %>
   <div class="parallax">
-    <%= image_tag current_user.cover.thumb('1440x835#').url%>
+    <%= image_tag current_user.cover.thumb('1440x835#').url, class: "responsive-img" %>
   </div>
     <% else %>
       <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 2"></div>
@@ -167,7 +167,7 @@ nav a {
     </div>
   </div>
   <% if user_signed_in? %>
-    <div class="parallax"><%= image_tag current_user.cover.thumb('1440x835#').url%></div>
+    <div class="parallax"><%= image_tag current_user.cover.thumb('1440x835#').url, class: "responsive-img" %></div>
     <% else %>
       <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
   <% end %>
@@ -195,6 +195,16 @@ nav a {
                 </div>
             </div>
             <% end %>
+            <% if @works.empty? %>
+            <div class="row">
+                <div class="card">
+                  <h2 class="center">cette place est pr&eacute;vue pour la cr&eacute;ation de vos projets</h2>
+                </div>
+                <%= link_to new_work_path do %>
+                <i class="center-align wow bounce" data-wow-iteration="infinite" data-wow-duration="2s">Creer work</i>
+                <% end %>
+            </div>
+            <% end %>
         </div>
     </div>
 </div>
@@ -208,7 +218,7 @@ nav a {
     </div>
   </div>
   <% if user_signed_in? %>
-    <div class="parallax"><%= image_tag current_user.cover.thumb('1440x835#').url%></div>
+    <div class="parallax"><%= image_tag current_user.cover.thumb('1440x835#').url, class: "responsive-img"%></div>
     <% else %>
       <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 2"></div>
   <% end %>

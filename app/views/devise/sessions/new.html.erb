@@ -1,15 +1,56 @@
-<h2>Log in</h2>
+<style>
+body{
+  background: url(/motif.jpg);
+}
+.row {
+    margin-top: 73px;
+    margin-bottom: 73px;
+    margin-left: 453px;
+}
+@media only  screen and (min-width : 320px) and (max-width: 1280px)  {
+  .container {
+    margin: 492px 280px 0px 275px;
+    padding-top: 8px;
+    padding-bottom: 984px;
+  }
+}
+@media only  screen and (min-width : 1280px) {
+  .container {
+    margin: 72px 0px 0px 365px;
+    padding-bottom: 100px;
+      }
+}
+@media only screen and (max-width : 600px){
+  .container {
+    margin: 72px 0px 0px 365px;
+    padding-bottom: 100px;
+      }
+}
+</style>
+<div class="container">
+  <div class="row">
+    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 2"></div>
+          <div class="col s12 m6">
+            <div class="card blue-grey lighten-5">
+              <div class="card-content z-depth-4">
+                 <span class="card-title" style="color: #003366;">Log in</span>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+                <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <div class="form-inputs" style="color: #003366;">
+                    <%= f.input :email, required: false, autofocus: true, class: "validate" %>
+                    <%= f.input :password, required: false %>
+                    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                  </div>
+                  <div class="card-action">
+                        <div class="form-actions">
+                          <%= f.button :submit, "Log in" %>
+                        </div>
+                      <% end %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+                      <%= render "devise/shared/links" %>
+                  </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+</div>

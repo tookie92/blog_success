@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="col s12 m6 l12">
+      <h1>Listing Items</h1>
+              <% @items.each do |item| %>
+              <% if item.completed_at? %>
+                  <div class="row">
+                  <!-- item complete -->
+                  <div class="col s2">
+                    <p><%= link_to complete_item_path(item), method: :patch do %><p>
+                        <h3><i class="ti-check"></i></h3>
+                      <% end %>
+                    </div>
+                    <div class="col s2">
+                      <p><%= link_to item, method: :delete, data: {confirm: "Are you sure?"} do %><p>
+                        <h3><i class="ti-trash"></i></h3>
+                        <% end %>
+                      </div>
+                      <div class="col s8">
+                        <div class="card hoverable">
+                          <h2 style="opacity: O.5; margin: 12px"><strike><%= link_to item.titre, item %></strike></h2>
+                          <p style="text-align: justify; opacity: 0.5; margin: 12px"><%= item.description %></p>
+                          <p style="opacity: O.5; margin: 12px">Completed <%= time_ago_in_words(item.completed_at)%> ago</p>
+                        </div>
+                      </div>
+                    </div>
+                      <% else %>
+                      <div class="row">
+                      <!-- item uncomplete -->
+                      <div class="col s2">
+                        <p><%= link_to complete_item_path(item), method: :patch do %><p>
+                          <h3><i class="ti-check tooltipped" data-position="left" data-delay="50" data-tooltip="Marquer comme complet"></i></h3>
+                          <% end %>
+                        </div>
+                          <div class="col s8">
+                            <h2><%= link_to item.titre, item %></h2>
+                            <p style="text-align: justify"><%= item.description %></p>
+                            <p>Created <%= time_ago_in_words(item.created_at)%> ago</p>
+                          </div>
+                          <div class="col s2">
+                            <p><%= link_to item, method: :delete, data: {confirm: "Are you sure?"} do %><p>
+                              <h3><i class="ti-trash tooltipped" data-position="right" data-delay="50" data-tooltip="Supprimer la tache"></i></h3>
+                              <% end %>
+                            </div>
+                        </div>
+                  <% end %>
+
+               <% end %>
+
+      <br>
+  </div>
+</div>

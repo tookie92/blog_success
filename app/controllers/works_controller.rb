@@ -14,7 +14,7 @@ class WorksController < ApplicationController
 
   # GET /works/new
   def new
-    @work = Work.new
+    @work = current_user.works.build
   end
 
   # GET /works/1/edit
@@ -24,7 +24,7 @@ class WorksController < ApplicationController
   # POST /works
   # POST /works.json
   def create
-    @work = Work.new(work_params)
+    @work = current_user.works.build(work_params)
 
     respond_to do |format|
       if @work.save

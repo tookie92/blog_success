@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row col s12">
+      <%= simple_form_for(@item) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :titre %>
+        <%= f.input :description,  id: "textarea1", class: "materialize-textarea" %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+      <% end %>
+  </div>
+</div>
