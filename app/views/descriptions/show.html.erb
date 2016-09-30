@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Profession:</strong>
+  <%= @description.profession %>
+</p>
+
+<p>
+  <strong>Adresse:</strong>
+  <%= @description.adresse %>
+</p>
+
+<p>
+  <strong>Situation:</strong>
+  <%= @description.situation %>
+</p>
+
+<p>
+  <strong>Qjs:</strong>
+  <%= @description.qjs %>
+</p>
+
+<%= link_to 'Edit', edit_description_path(@description) %> |
+<%= link_to 'Back', descriptions_path %>
