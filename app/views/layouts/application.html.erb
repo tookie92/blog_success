@@ -20,6 +20,9 @@
 
 <script src="js/init.js"></script>
 <script src="js/wow.js"></script>
+<script type="text/javascript" src="js/sticker.min.js"></script>
+
+<!--wowjs -->
 <script>
 wow = new WOW(
 {
@@ -32,5 +35,14 @@ live: true // default
 )
 wow.init();
 </script>
+<!--wowjs -->
+<!--sticker -->
+<script type="text/javascript">
+       window.onload = function() {
+           Sticker.init('.sticker');
+       }
+   </script>
+<!--sticker -->
+
 </body>
 </html>

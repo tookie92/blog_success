@@ -54,6 +54,11 @@ padding: 3px;
   font-weight:100;
   color:white
 }
+
+#presentation h2{
+  font-family: 'Titan One', cursive;
+  color: #003366;
+}
 nav ul a,
 nav .brand-logo {
   color: #444;

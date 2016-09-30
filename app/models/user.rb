@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          dragonfly_accessor :cover
          has_many :items
          has_many :works
+         has_one :description
 
 
          acts_as_messageable

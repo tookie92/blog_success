@@ -16,10 +16,12 @@
                       <li><%= link_to "Deconnexion", destroy_user_session_path, method: :delete  %></li>
               </ul>
           <!-- / Dropdown Structure -->
-                    <li><%= image_tag current_user.profil.thumb('30x30#').url, class: 'circle responsive-img' %> </li>
-                    <li><%= link_to current_user.prenom+" "+current_user.nom, edit_user_registration_path %></li>
-                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<small><i class="ti-widget-alt right" style="font-size : small; margin: 2px">
-                    </i></small></a></li>
+
+            <li><%= image_tag current_user.profil.thumb('30x30#').url, class: 'circle sticker responsive-img' %></li>
+            <li><%= link_to current_user.prenom+" "+current_user.nom,  edit_user_registration_path  %></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu<small><i class="ti-widget-alt right" style="font-size : small; margin: 2px">
+            </i></small></a></li>
+
 
               <% else  %>
               <li><a href="#presentation">Presentation</a></li>
@@ -90,7 +92,7 @@ nav a {
     <div class="container">
       <% if user_signed_in? %>
       <div class="row center">
-        <%= image_tag current_user.profil.thumb('150x150#').url, class: 'circle hoverable responsive-img' %>
+        <%= image_tag current_user.profil.thumb('150x150#').url, class: 'circle  hoverable responsive-img' %>
       </div>
       <br>
       <h1 class="text_h center header cd-headline letters type"><%= current_user.prenom+" "+current_user.nom %>
@@ -123,139 +125,107 @@ nav a {
   </div>
   <% if user_signed_in? %>
   <div class="parallax">
-    <%= image_tag current_user.cover.thumb('1440x835#').url, class: "responsive-img" %>
+    <%= image_tag current_user.cover.url, class: "responsive-img" %>
   </div>
     <% else %>
       <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 2"></div>
   <% end %>
 </div>
 
-
-<div class="container">
-  <div id="presentation" class="section scrollspy">
-
-    <!--   Icon Section   -->
-    <div class="row colonne">
-      <div class="col s12 m6 l6">
-        <div  class="icon-block wow slideInLeft" data-wow-delay="200ms">
-          <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-        </div>
-      </div>
-
-
-
-      <div class="col s12 m6 l6  z-depth-2">
-        <div class="icon-block wow slideInRight" data-wow-delay="205ms">
-          <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-          <h5 class="center">Easy to work with</h5>
-
-          <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<div class="parallax-container valign-wrapper">
-  <div id="pdj" class="section no-pad-bot scrollspy">
-    <div class="container">
-      <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-      </div>
-    </div>
-  </div>
-  <% if user_signed_in? %>
-    <div class="parallax"><%= image_tag current_user.cover.thumb('1440x835#').url, class: "responsive-img" %></div>
-    <% else %>
-      <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
-  <% end %>
-</div>
-
-<!--Work-->
-<div class="section scrollspy" id="work">
-    <div class="container">
-        <h2 class="header text_b">Work </h2>
+<!-- description -->
+<div style="background color: #F9F9F9" id="presentation" class="section scrollspy">
+    <div  class="container">
         <div class="row">
-          <% @works.each do |w| %>
-            <div class="col s12 m4 l4 wow flipInX" >
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <%= image_tag w.image.thumb('500x500#').url %>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4"><%= w.title %><i class="mdi-navigation-more-vert right"></i></span>
-                        <p><%= link_to 'Project Link', w %></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4"><%= w.title %><i class="ti-close right"></i></span>
-                        <p><%= w.description %></p>
-                    </div>
+            <div  class="col s12">
+                <h2 class="center header text_h2"> Description<br><span class="text_h5" >.......</span> </h2>
+
+            </div>
+
+            <div class="col s12 m3 l4">
+                <div class="center promo promo-example">
+                    <%= image_tag current_user.profil.thumb('300x300#').url, class: 'circle  hoverable responsive-img' %>
                 </div>
             </div>
-            <% end %>
-            <% if @works.empty? %>
-            <div class="row">
-                <div class="card">
-                  <h2 class="center">cette place est pr&eacute;vue pour la cr&eacute;ation de vos projets</h2>
-                </div>
-                <%= link_to new_work_path do %>
-                <i class="center-align wow bounce" data-wow-iteration="infinite" data-wow-duration="2s">Creer work</i>
+            <div class="col s12 m2 l2"></div>
+            <div class="col s12 m7 l8">
+              <ul style=" background-color : #F9F9F9; " class="collapsible popout" data-collapsible="accordion">
+                <% @descriptions.each do |d| %>
+                <li>
+                  <div class="collapsible-header active"><i class="material-icons">filter_drama</i>Statut</div>
+                  <div class="collapsible-body"><p>Profession : <%= d.profession %><br>
+                    Situation : <%= d.situation %><br> Adresse : <%= d.adresse %>
+                  </p></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">place</i>Qui je suis? </div>
+                  <div class="collapsible-body"><p><%= d.qjs %></p></div>
+                </li>
                 <% end %>
+                <% if @descriptions.empty? %>
+                  veuillez cliquer <%= link_to "ici", descriptions_path %> pour completer votre profil
+                <% end %>
+              </ul>
             </div>
-            <% end %>
+
         </div>
     </div>
 </div>
+<!-- /description -->
 
-<div class="parallax-container valign-wrapper">
-  <div id="event" class="section no-pad-bot scrollspy">
-    <div class="container">
-      <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-      </div>
+<!-- items -->
+<div style="background color: #F9F9F9" id="pdj" class="section scrollspy">
+    <div  class="container">
+        <div class="row">
+          <div class="col s12 m6 l12">
+            <h1>A faire aujourd'hui</h1>
+                    <% @items.each do |item| %>
+                    <% if item.completed_at? %>
+                        <div class="row">
+                        <!-- item complete -->
+                        <div class="col s2">
+                          <p><%= link_to complete_item_path(item), method: :patch do %><p>
+                              <h3><i class="ti-check"></i></h3>
+                            <% end %>
+                          </div>
+                          <div class="col s2">
+                            <p><%= link_to item, method: :delete, data: {confirm: "Are you sure?"} do %><p>
+                              <h3><i class="ti-trash"></i></h3>
+                              <% end %>
+                            </div>
+                            <div class="col s8">
+                              <div class="card hoverable">
+                                <h2 style="opacity: O.5; margin: 12px"><strike><%= link_to item.titre, item %></strike></h2>
+                                <p style="text-align: justify; opacity: 0.5; margin: 12px"><%= item.description %></p>
+                                <p style="opacity: O.5; margin: 12px">Completed <%= time_ago_in_words(item.completed_at)%> ago</p>
+                              </div>
+                            </div>
+                          </div>
+                            <% else %>
+                            <div class="row">
+                            <!-- item uncomplete -->
+                            <div class="col s2">
+                              <p><%= link_to complete_item_path(item), method: :patch do %><p>
+                                <h3><i class="ti-check tooltipped" data-position="left" data-delay="50" data-tooltip="Marquer comme complet"></i></h3>
+                                <% end %>
+                              </div>
+                                <div class="col s8">
+                                  <h2><%= link_to item.titre, item %></h2>
+                                  <p style="text-align: justify"><%= item.description %></p>
+                                  <p>Created <%= time_ago_in_words(item.created_at)%> ago</p>
+                                </div>
+                                <div class="col s2">
+                                  <p><%= link_to item, method: :delete, data: {confirm: "Are you sure?"} do %><p>
+                                    <h3><i class="ti-trash tooltipped" data-position="right" data-delay="50" data-tooltip="Supprimer la tache"></i></h3>
+                                    <% end %>
+                                  </div>
+                              </div>
+                        <% end %>
+
+                     <% end %>
+
+            <br>
+            <div>
+        </div>
     </div>
-  </div>
-  <% if user_signed_in? %>
-    <div class="parallax"><%= image_tag current_user.cover.thumb('1440x835#').url, class: "responsive-img"%></div>
-    <% else %>
-      <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 2"></div>
-  <% end %>
 </div>
-
-<footer id="contact" class="default_color page-footer teal scrollspy">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Company Bio</h5>
-        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-      </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Settings</h5>
-        <ul>
-          <li><a class="white-text" href="#!">Link 1</a></li>
-          <li><a class="white-text" href="#!">Link 2</a></li>
-          <li><a class="white-text" href="#!">Link 3</a></li>
-          <li><a class="white-text" href="#!">Link 4</a></li>
-        </ul>
-      </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Connect</h5>
-        <ul>
-          <li><a class="white-text" href="#!">Link 1</a></li>
-          <li><a class="white-text" href="#!">Link 2</a></li>
-          <li><a class="white-text" href="#!">Link 3</a></li>
-          <li><a class="white-text" href="#!">Link 4</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-    Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-    </div>
-  </div>
-</footer>
+<!-- /items -->
